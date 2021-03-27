@@ -8,6 +8,7 @@ The project is using FaunaDB to store subscriptions and user data.
 
 - [x] Next.js
 - [x] Next Auth
+- [x] GitHub OAuth 
 - [x] Strapi
 - [x] FaunaDB
 - [x] Prismic CMS
