@@ -1,15 +1,20 @@
+import React from 'react'
 import { AppProps } from 'next/app'
-import { Provider as NextAuthProvider } from 'next-auth/client'
+import { ThemeProvider } from 'styled-components'
 import { Header } from '../components/Header'
-
-import '../styles/global.scss'
+import { Provider as NextAuthProvider } from 'next-auth/client'
+import dark from '../styles/themes/dark'
+import { GlobalStyles } from '../styles/globals'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NextAuthProvider session={pageProps.session}>
-      <Header />
-      <Component {...pageProps} />
-    </NextAuthProvider>
+    <ThemeProvider theme={dark}>
+      <GlobalStyles />
+      <NextAuthProvider session={pageProps.session}>
+        <Header />
+        <Component {...pageProps} />
+      </NextAuthProvider>
+    </ThemeProvider>
   )
 }
 
